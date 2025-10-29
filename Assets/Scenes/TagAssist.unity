@@ -467,6 +467,7 @@ GameObject:
   - component: {fileID: 953222343}
   - component: {fileID: 953222342}
   - component: {fileID: 953222345}
+  - component: {fileID: 953222346}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -592,6 +593,36 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &953222346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953222341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ba7096c62473924fb437c56191ef8d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EjectScript
+  menuScene: MainMenu
+  action:
+    m_Name: Action
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: db340737-c739-4972-a357-6ea63fdc7f63
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 5d368c96-d947-44f9-a89e-8b676adb2272
+      m_Path: <Keyboard>/escape
+      m_Interactions: Hold(duration=3)
+      m_Processors: 
+      m_Groups: 
+      m_Action: Action
+      m_Flags: 0
+    m_Flags: 0
 --- !u!1 &1075532533
 GameObject:
   m_ObjectHideFlags: 0
