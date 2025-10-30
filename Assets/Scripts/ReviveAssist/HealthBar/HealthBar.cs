@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class HealthBar : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class HealthBar : MonoBehaviour
     {
         if (Mathf.Approximately(_shownHealth, Health)) return;
         
-        var percentage = Health / MaxHealth;
+        var percentage = Mathf.Clamp01(Health / MaxHealth);
         Bar.transform.localScale = new Vector3(percentage, 1f, 1f);
         Bar.transform.localPosition = new Vector3(-0.5f + percentage / 2f, 0f, 0f);
         _healthBarRenderer.material.color = HealthGradient.Evaluate(percentage);
@@ -36,6 +37,8 @@ public class HealthBar : MonoBehaviour
 
     public void UpdateHealth(float health)
     {
+        InputAction action;
+        
         Health = Mathf.Clamp(health, 0f, MaxHealth);
         UpdateHealthBar();
     }
