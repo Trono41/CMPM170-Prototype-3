@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class PlayerAutoMovement : MonoBehaviour
 {
-    Rigidbody rb;
+    private Rigidbody rb;
 
-    public float moveForce = 20f;
+    public float moveForce = 8f;
     public float maxSpeed = 10f;
 
-    public float jumpForce = 2f;
+    public float jumpForce = 10f;
+    public bool isGrounded = true;
 
 
 
@@ -22,8 +23,30 @@ public class PlayerAutoMovement : MonoBehaviour
     {
         rb.AddForce(0, 0, moveForce);
 
-        if(rb.linearVelocity.magnitude > maxSpeed) {
-            rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, maxSpeed);
+        Vector3 velocity = rb.linearVelocity;
+
+        if (Mathf.Abs(velocity.z) > maxSpeed)
+        {
+            velocity.z = Mathf.Sign(velocity.z) * maxSpeed;
+            rb.linearVelocity = velocity;
         }
+    }
+
+
+
+    void OnMouseDown()
+    {
+        if (isGrounded)
+        {
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            isGrounded = false;
+        }
+    }
+
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        isGrounded = true;
     }
 }
