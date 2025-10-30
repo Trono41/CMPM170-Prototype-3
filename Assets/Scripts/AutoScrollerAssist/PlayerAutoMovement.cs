@@ -2,15 +2,28 @@ using UnityEngine;
 
 public class PlayerAutoMovement : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    Rigidbody rb;
+
+    public float moveForce = 20f;
+    public float maxSpeed = 10f;
+
+    public float jumpForce = 2f;
+
+
+
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+
+
+    void FixedUpdate()
     {
-        
+        rb.AddForce(0, 0, moveForce);
+
+        if(rb.linearVelocity.magnitude > maxSpeed) {
+            rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, maxSpeed);
+        }
     }
 }
