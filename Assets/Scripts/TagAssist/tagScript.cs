@@ -33,13 +33,15 @@ public class TagScript : MonoBehaviour
         var reserveRB = reserve.GetComponent<Rigidbody>();
 
         reserve.SetActive(true);
-        reserveRB.position = new Vector3(activePos.x-2, activePos.y + 5, activePos.z);
+        reserve.GetComponent<PlayerController>().enabled = true;
+        reserveRB.position = new Vector3(activePos.x-2, 5, activePos.z);
         reserveRB.AddForce(Vector3.right * 2f, ForceMode.Impulse);
 
         var temp = active;
         active = reserve;
         reserve = temp;
 
+        reserve.GetComponent<PlayerController>().enabled = false;
         reserve.SetActive(false);
         activeRB = active.GetComponent<Rigidbody>();
     }

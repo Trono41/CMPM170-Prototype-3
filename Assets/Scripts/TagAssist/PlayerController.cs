@@ -33,4 +33,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void OnEnable()
+    {
+        rb.maxLinearVelocity = 5;
+    }
+
 }
