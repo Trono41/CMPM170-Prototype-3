@@ -1,0 +1,3 @@
+[submodule "CMPM170-Prototype3-WebBuild"]
+	path = CMPM170-Prototype3-WebBuild
+	url = https://github.com/superspeeder/CMPM170-Prototype3-WebBuild
