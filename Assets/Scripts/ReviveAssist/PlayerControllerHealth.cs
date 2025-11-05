@@ -24,11 +24,13 @@ public class PlayerControllerHealth : MonoBehaviour {
         MoveAction.Enable();
     }
 
+    #if UNITY_EDITOR
     private void OnValidate() {
         if (HealthPackPrefab && !HealthPackPrefab.IsPrefabDefinition()) {
             HealthPackPrefab = null;
         }
     }
+    #endif
 
     // Update is called once per frame
     void Update() {
