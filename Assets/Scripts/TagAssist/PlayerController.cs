@@ -1,31 +1,41 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Experimental.Rendering;
 
 public class PlayerController : MonoBehaviour
 {
+    public float velocity = 5;
     private Rigidbody rb;
-    [SerializeField] float velocity = 5;
-    [SerializeField] float jumpHeight = 5;
+    public InputAction moveInput;
+    public InputAction jumpInput;
+    private bool jumping = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        moveInput.Enable();
+        jumpInput.Enable();
         rb = GetComponent<Rigidbody>();
+        rb.maxLinearVelocity = 5;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float horizontalInput = Input.GetAxis("Horizontal") * velocity;
-
-        // Calculate movement direction
-        Vector3 movement = new Vector3(horizontalInput, 0f, 0f);
-
-        // Move the player
-        // Time.deltaTime ensures consistent movement speed across different frame rates
-        rb.linearVelocity = new Vector3(horizontalInput, 0f, 0f);
-        if (Input.GetButtonDown("Jump"))
+        rb.AddForce(moveInput.ReadValue<float>() * velocity, 0, 0);
+        if (jumpInput.triggered && jumping == false)
         {
-            rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpHeight, 0);
+            jumping = true;
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, 10f, 0);
+        }
+        if (rb.position.y == 1)
+        {
+            jumping = false;
         }
     }
+
+    void OnEnable()
+    {
+        rb.maxLinearVelocity = 5;
+    }
+
 }
