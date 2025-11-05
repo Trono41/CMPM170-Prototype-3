@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public InputAction moveInput;
     public InputAction jumpInput;
     private bool jumping = false;
+    public bool canDoubleJump = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,7 +23,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         rb.AddForce(moveInput.ReadValue<float>() * velocity, 0, 0);
-        if (jumpInput.triggered && jumping == false)
+        if (jumpInput.triggered && (jumping == false && rb.position.y == 1))
+        {
+            jumping = true;
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, 10f, 0);
+        }
+        else if (canDoubleJump && (jumpInput.triggered && jumping == false))
         {
             jumping = true;
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, 10f, 0);

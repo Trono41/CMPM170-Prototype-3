@@ -345,7 +345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bec59ab950235443b0d6cfbe6872421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  velocity: 20
+  velocity: 40
   moveInput:
     m_Name: Move Input
     m_Type: 0
@@ -396,6 +396,7 @@ MonoBehaviour:
       m_Action: Jump Input
       m_Flags: 0
     m_Flags: 0
+  canDoubleJump: 0
 --- !u!23 &213601441
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -856,6 +857,7 @@ MonoBehaviour:
       m_Action: Jump Input
       m_Flags: 0
     m_Flags: 0
+  canDoubleJump: 1
 --- !u!23 &827001936
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1819,6 +1821,7 @@ MonoBehaviour:
       m_Action: Jump Input
       m_Flags: 0
     m_Flags: 0
+  canDoubleJump: 0
 --- !u!114 &2077657993
 MonoBehaviour:
   m_ObjectHideFlags: 0
