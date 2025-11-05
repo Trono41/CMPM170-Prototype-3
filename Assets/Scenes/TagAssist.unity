@@ -1097,6 +1097,14 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Action
       m_Flags: 0
+    - m_Name: 
+      m_Id: d4512f50-b272-435d-b28f-0d78c759a3fc
+      m_Path: <Keyboard>/backspace
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Action
+      m_Flags: 0
     m_Flags: 0
 --- !u!114 &953222347
 MonoBehaviour:

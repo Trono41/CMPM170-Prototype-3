@@ -956,6 +956,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6066741936226780508, guid: e2407f5e33d1bab4b9a5fdefa052d2a5, type: 3}
+      propertyPath: action.m_SingletonActionBindings.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6066741936226780508, guid: e2407f5e33d1bab4b9a5fdefa052d2a5, type: 3}
+      propertyPath: action.m_SingletonActionBindings.Array.data[1].m_Id
+      value: 6b3f5665-63c6-4635-8762-b406c9a52ec2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6066741936226780508, guid: e2407f5e33d1bab4b9a5fdefa052d2a5, type: 3}
+      propertyPath: action.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <Keyboard>/backspace
+      objectReference: {fileID: 0}
+    - target: {fileID: 6066741936226780508, guid: e2407f5e33d1bab4b9a5fdefa052d2a5, type: 3}
+      propertyPath: action.m_SingletonActionBindings.Array.data[1].m_Action
+      value: Action
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
