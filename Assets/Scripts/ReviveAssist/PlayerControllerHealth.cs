@@ -3,7 +3,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerControllerHealth : MonoBehaviour {
+public class PlayerControllerHealth : MonoBehaviour
+{
     public InputAction ThrowAction;
     public InputAction MoveAction;
 
@@ -14,38 +15,55 @@ public class PlayerControllerHealth : MonoBehaviour {
     public GameObject HealthPackPrefab;
     public float MoveSpeed = 1.0f;
 
-    [SerializeField] private float throwStrength = 0f;
+    private float throwStrength = 0f;
     private bool isThrowing = false;
+
+    public RectTransform ThrowStrengthBar;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start() {
+    void Start()
+    {
         ThrowAction.Enable();
         MoveAction.Enable();
+
+        ThrowStrengthBar.gameObject.SetActive(false);
     }
 
-    #if UNITY_EDITOR
-    private void OnValidate() {
-        if (HealthPackPrefab && !HealthPackPrefab.IsPrefabDefinition()) {
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        if (HealthPackPrefab && !HealthPackPrefab.IsPrefabDefinition())
+        {
             HealthPackPrefab = null;
         }
     }
-    #endif
+#endif
 
     // Update is called once per frame
-    void Update() {
-        if (isThrowing) {
+    void Update()
+    {
+        if (isThrowing)
+        {
+            ThrowStrengthBar.sizeDelta = new Vector2(ThrowStrengthBar.sizeDelta.x, 52f *
+                (throwStrength - ThrowStrengthBase) /
+                (ThrowMaxStrength - ThrowStrengthBase));
+
             throwStrength = Mathf.Min(ThrowMaxStrength,
                 throwStrength + (ThrowMaxStrength - ThrowStrengthBase) * (Time.deltaTime / ThrowRampTime));
         }
 
         var throwClicked = ThrowAction.IsPressed();
 
-        if (throwClicked && !isThrowing) {
+        if (throwClicked && !isThrowing)
+        {
+            ThrowStrengthBar.gameObject.SetActive(true);
             isThrowing = true;
             throwStrength = ThrowStrengthBase;
         }
-        else if (!throwClicked && isThrowing) {
+        else if (!throwClicked && isThrowing)
+        {
+            ThrowStrengthBar.gameObject.SetActive(false);
             throwHealthPack(throwStrength);
             throwStrength = 0f;
             isThrowing = false;
@@ -55,7 +73,8 @@ public class PlayerControllerHealth : MonoBehaviour {
         transform.Translate(transform.right * (moveAmount * MoveSpeed * Time.deltaTime));
     }
 
-    private void throwHealthPack(float strength) {
+    private void throwHealthPack(float strength)
+    {
         var rot = Quaternion.AngleAxis(ThrowAngle, transform.right) *
                   transform.rotation; // may need to change the order of this rotation
         var medpack = Instantiate(HealthPackPrefab, transform.position, rot);
