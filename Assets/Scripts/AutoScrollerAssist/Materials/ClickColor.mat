@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: ClickColor
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_Parent: {fileID: 2100000, guid: 1eb70948ad01a7a46b3f7cd9228d617f, type: 2}
+  m_Parent: {fileID: 2100000, guid: 046deef848222c349bcad8910acaaf8e, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -27,9 +27,7 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats: []
-    m_Colors:
-    - _BaseColor: {r: 0, g: 0.84735584, b: 1, a: 1}
-    - _Color: {r: 0, g: 0.84735584, b: 1, a: 1}
+    m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &8499879265680395577

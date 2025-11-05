@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class TagScript : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class TagScript : MonoBehaviour
     public InputAction tagToR1;
     public InputAction tagToR2;
 
+    public RawImage UISlot1;
+    public RawImage UISlot2;
+
     private Rigidbody activeRB;
 
     void Start()
@@ -16,18 +20,22 @@ public class TagScript : MonoBehaviour
         activeRB = activeCharacter.GetComponent<Rigidbody>();
         tagToR1.Enable();
         tagToR2.Enable();
+        UISlot1.color = reserveCharacter1.GetComponent<Renderer>().material.color;
+        UISlot2.color = reserveCharacter2.GetComponent<Renderer>().material.color;
+        reserveCharacter1.SetActive(false);
+        reserveCharacter2.SetActive(false);
     }
 
     void Update()
     {
         if (tagToR1.triggered)
-            SwapCharacter(ref activeCharacter, ref reserveCharacter1);
+            SwapCharacter(ref activeCharacter, ref reserveCharacter1, UISlot1);
 
         if (tagToR2.triggered)
-            SwapCharacter(ref activeCharacter, ref reserveCharacter2);
+            SwapCharacter(ref activeCharacter, ref reserveCharacter2, UISlot2);
     }
 
-    void SwapCharacter(ref GameObject active, ref GameObject reserve)
+    void SwapCharacter(ref GameObject active, ref GameObject reserve, RawImage UISlot)
     {
         var activePos = active.transform.position;
         var reserveRB = reserve.GetComponent<Rigidbody>();
@@ -44,6 +52,7 @@ public class TagScript : MonoBehaviour
         reserve.GetComponent<PlayerController>().enabled = false;
         reserve.SetActive(false);
         activeRB = active.GetComponent<Rigidbody>();
+        UISlot.color = reserve.GetComponent<Renderer>().material.color;
     }
 }
 

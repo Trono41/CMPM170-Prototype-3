@@ -5,6 +5,7 @@ using UnityEngine.Experimental.Rendering;
 public class PlayerController : MonoBehaviour
 {
     public float velocity = 5;
+    public float maxVelocity = 5;
     private Rigidbody rb;
     public InputAction moveInput;
     public InputAction jumpInput;
@@ -16,7 +17,7 @@ public class PlayerController : MonoBehaviour
         moveInput.Enable();
         jumpInput.Enable();
         rb = GetComponent<Rigidbody>();
-        rb.maxLinearVelocity = 5;
+        rb.maxLinearVelocity = maxVelocity;
     }
 
     // Update is called once per frame
@@ -41,7 +42,6 @@ public class PlayerController : MonoBehaviour
 
     void OnEnable()
     {
-        rb.maxLinearVelocity = 5;
+        rb.maxLinearVelocity = maxVelocity;
     }
-
 }
