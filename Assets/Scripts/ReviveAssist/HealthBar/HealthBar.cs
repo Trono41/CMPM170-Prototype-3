@@ -18,6 +18,11 @@ public class HealthBar : MonoBehaviour
         _healthBarRenderer = Bar.GetComponent<Renderer>();
     }
 
+    private void OnValidate() {
+        MaxHealth = Mathf.Max(float.Epsilon, MaxHealth);
+        Health = Mathf.Clamp(Health, 0f, MaxHealth);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -41,5 +46,9 @@ public class HealthBar : MonoBehaviour
         
         Health = Mathf.Clamp(health, 0f, MaxHealth);
         UpdateHealthBar();
+    }
+
+    public void AddHealth(float health) {
+        UpdateHealth(Health + health);
     }
 }

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5159116873381772608}
+  - component: {fileID: 7731404675436073927}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -32,6 +33,75 @@ Transform:
   - {fileID: 3372233923033903750}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7731404675436073927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327821325243962429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f1c2a1ba36840d4d892195898b4add7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerControllerHealth
+  ThrowAction:
+    m_Name: Throw
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: f5b8647c-626b-426f-ab28-838baf405ba4
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: ffd9ce3e-0fa1-400a-86d5-1b4e1484cb6a
+      m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Throw
+      m_Flags: 0
+    m_Flags: 0
+  MoveAction:
+    m_Name: Move
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 9a11c74e-90a2-437d-91de-db334ac72752
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 1D Axis
+      m_Id: f9c7b663-757c-402b-9832-de4f5610190d
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 16843ed1-a221-408b-9a96-185b0711f704
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 514a27c4-a775-48a3-98e4-940ec405954b
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    m_Flags: 0
+  ThrowStrengthBase: 6
+  ThrowMaxStrength: 18
+  ThrowRampTime: 1.5
+  ThrowAngle: -15
+  HealthPackPrefab: {fileID: 1727960313374903910, guid: 304080e54302bd5408442a46db6d4761, type: 3}
+  MoveSpeed: 1
+  throwStrength: 0
 --- !u!1 &3564583856583384846
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,6 +114,7 @@ GameObject:
   - component: {fileID: 6313260952171091569}
   - component: {fileID: 5053452781158925255}
   - component: {fileID: 628267880491983415}
+  - component: {fileID: 6066741936226780508}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -169,3 +240,33 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &6066741936226780508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3564583856583384846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ba7096c62473924fb437c56191ef8d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EjectScript
+  menuScene: Scenes/MainMenu
+  action:
+    m_Name: Action
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: f10aa99a-43cc-4371-8a49-62b263c3b90b
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 76f383e6-a3d9-4933-afd3-7f9780d337c6
+      m_Path: <Keyboard>/escape
+      m_Interactions: Hold(duration=3)
+      m_Processors: 
+      m_Groups: 
+      m_Action: Action
+      m_Flags: 0
+    m_Flags: 0

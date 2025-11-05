@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4269183876585622032}
   - component: {fileID: 7420524229542164052}
+  - component: {fileID: 8022165078891790060}
   m_Layer: 0
   m_Name: HealableCharacter
   m_TagString: Untagged
@@ -58,6 +59,20 @@ CapsuleCollider:
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.21666667, z: 0}
+--- !u!114 &8022165078891790060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3724803335828153917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f843383f355ecc94981f184dd12f81bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Healable
+  HealthLossPerSecond: 4
+  HealthBar: {fileID: 1572798794238084246}
 --- !u!1 &6915068529787876692
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,6 +308,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3e579c102763a14d8590502a00f3ce5, type: 3}
+--- !u!114 &1572798794238084246 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6335114355141168326, guid: f3e579c102763a14d8590502a00f3ce5, type: 3}
+  m_PrefabInstance: {fileID: 4771964969976825936}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69628ba2770968542bd2ff52c36c7a7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthBar
 --- !u!4 &8965373541471027886 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4490664316357479166, guid: f3e579c102763a14d8590502a00f3ce5, type: 3}
