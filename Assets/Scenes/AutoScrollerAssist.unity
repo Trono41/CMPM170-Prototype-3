@@ -374,6 +374,14 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Action
       m_Flags: 0
+    - m_Name: 
+      m_Id: d7f70012-bc5d-49c4-8c16-9e5243820c45
+      m_Path: <Keyboard>/tab
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Action
+      m_Flags: 0
     m_Flags: 0
 --- !u!114 &218098106
 MonoBehaviour:
