@@ -42,7 +42,7 @@ public class TagScript : MonoBehaviour
 
         reserve.SetActive(true);
         reserve.GetComponent<PlayerController>().enabled = true;
-        reserveRB.position = new Vector3(activePos.x-2, 5, activePos.z);
+        reserveRB.position = new Vector3(activePos.x-2, 2, activePos.z);
         reserveRB.AddForce(Vector3.right * 2f, ForceMode.Impulse);
 
         var temp = active;
