@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8465621102466212769}
   - component: {fileID: 6590770725862188564}
   - component: {fileID: 7904526267959059326}
+  - component: {fileID: 8374400863345665876}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.21, z: 23.94}
-  m_LocalScale: {x: 3, y: 2, z: 2}
+  m_LocalScale: {x: 20, y: 15, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -41,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2732770397863705969}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4799939183687158410, guid: 445af844f3b4618409e92db5accf5d19, type: 3}
 --- !u!23 &6590770725862188564
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -67,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 7859bd5185003594593ea0276096cbf4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -109,5 +110,17 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.2, y: 0.3, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8374400863345665876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2732770397863705969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbcf549eb9181294eb1d534fc3e666f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResetSceneOnCollision
