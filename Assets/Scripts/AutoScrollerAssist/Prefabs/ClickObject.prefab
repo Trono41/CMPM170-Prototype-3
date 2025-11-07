@@ -26,7 +26,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 3.3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 2, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7719946119176993823}
@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 8386128247134161506}
   - component: {fileID: 5938805648516490695}
   - component: {fileID: 6154418912501296561}
+  - component: {fileID: 6384752904404435375}
   m_Layer: 0
   m_Name: OuterLayer
   m_TagString: Untagged
@@ -63,7 +64,7 @@ Transform:
   m_GameObject: {fileID: 1685982221158933680}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.67, z: 0}
   m_LocalScale: {x: 3, y: 6, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -76,7 +77,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1685982221158933680}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 6193740326635882838, guid: 36289f87ff31474409040d4e1c064c29, type: 3}
 --- !u!23 &8386128247134161506
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -145,7 +146,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &6154418912501296561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,6 +159,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e392565ae5d3b35498093e2ea0123d3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyOnClick
+--- !u!114 &6384752904404435375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685982221158933680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbcf549eb9181294eb1d534fc3e666f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResetSceneOnCollision
 --- !u!1 &1830267354965442182
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,6 +184,7 @@ GameObject:
   - component: {fileID: 6323861684653136115}
   - component: {fileID: 210841259922227868}
   - component: {fileID: 62895732115783741}
+  - component: {fileID: 7115372323637142124}
   m_Layer: 0
   m_Name: InnerLayer
   m_TagString: Untagged
@@ -187,8 +201,8 @@ Transform:
   m_GameObject: {fileID: 1830267354965442182}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.6, y: 5, z: 2.6}
+  m_LocalPosition: {x: 0, y: -1.61, z: 0}
+  m_LocalScale: {x: 2.6, y: 2.5, z: 2.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1979815916550285075}
@@ -200,7 +214,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830267354965442182}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 6193740326635882838, guid: 36289f87ff31474409040d4e1c064c29, type: 3}
 --- !u!23 &6323861684653136115
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -269,7 +283,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &62895732115783741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,6 +296,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e392565ae5d3b35498093e2ea0123d3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyOnClick
+--- !u!114 &7115372323637142124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830267354965442182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbcf549eb9181294eb1d534fc3e666f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResetSceneOnCollision
 --- !u!1 &3708815374579795675
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,6 +321,7 @@ GameObject:
   - component: {fileID: 4512692950909114733}
   - component: {fileID: 8864716679997035969}
   - component: {fileID: 6150268157686713402}
+  - component: {fileID: 558373063997211481}
   m_Layer: 0
   m_Name: MiddleLayer
   m_TagString: Untagged
@@ -311,8 +338,8 @@ Transform:
   m_GameObject: {fileID: 3708815374579795675}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.8, y: 5.5, z: 2.8}
+  m_LocalPosition: {x: 0, y: -1.61, z: 0}
+  m_LocalScale: {x: 2.8, y: 4.5, z: 2.8}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1979815916550285075}
@@ -324,7 +351,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3708815374579795675}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 6193740326635882838, guid: 36289f87ff31474409040d4e1c064c29, type: 3}
 --- !u!23 &4512692950909114733
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -393,7 +420,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &6150268157686713402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,3 +433,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e392565ae5d3b35498093e2ea0123d3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyOnClick
+--- !u!114 &558373063997211481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3708815374579795675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbcf549eb9181294eb1d534fc3e666f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResetSceneOnCollision
